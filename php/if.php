@@ -13,6 +13,10 @@ if ($a < $b) {
 	echo "$b is greater than $a\n";
 }
 
+// Another way with ternary:
+// $compare = ($a < $b) ? " is less than " : " is greater than ";
+// echo $a . $compare . $b . "\n";
+
 if ($b >= $c) {
 	// output the appropriate result
 	echo "$b is greater than or equal to $c\n";
