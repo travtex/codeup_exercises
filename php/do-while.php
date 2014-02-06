@@ -3,7 +3,7 @@
 $count = 2;
 
 do {
-	echo $count . "\n";
+	printf("%10d\n", $count . "\n");
 	$count *= $count;
 } while ($count < 1000000);
 
