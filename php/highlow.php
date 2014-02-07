@@ -8,12 +8,6 @@ fwrite(STDOUT, "Guess the number: ");
 $user_guess = fgets(STDIN);
 $guesses = 1;
 
-while (($user_guess < 1) || ($user_guess > 100)) {
-	fwrite(STDOUT, PHP_EOL . "You're not even trying!" . PHP_EOL);
-	fwrite(STDOUT, "Try again: ");
-	$user_guess = fgets(STDIN);
-}
-
 do {
 
 	if (($user_guess < 1) || ($user_guess > 100)) {
