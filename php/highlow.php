@@ -29,7 +29,7 @@ do {
 		}
 	} while(($user_guess < $number) || ($user_guess > $number));
 
-fwrite(STDOUT, PHP_EOL . "That's it!!" . PHP_EOL . "You're BRILLIANT!!" .
+fwrite(STDOUT, PHP_EOL . "That's it!!" . PHP_EOL . "You're BRILLIANT!! " .
 			"Or... lucky, or something!" . PHP_EOL . "It took you " . $guesses . " tries." 
 			. PHP_EOL);
 
