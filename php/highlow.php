@@ -1,6 +1,6 @@
 <?php
 
-$number = rand(1,100);
+$number = mt_rand(1,100);
 
 fwrite(STDOUT, PHP_EOL . "I'm thinking of a number between 1 and 100." . PHP_EOL);
 fwrite(STDOUT, "Guess the number: ");
