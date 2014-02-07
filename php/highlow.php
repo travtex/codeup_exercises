@@ -35,4 +35,6 @@ do {
 fwrite(STDOUT, PHP_EOL . "That's it!!" . PHP_EOL . "You're BRILLIANT!!" .
 			"Or... lucky, or something!" . PHP_EOL);
 
+exit(0);
+
 ?>
