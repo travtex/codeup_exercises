@@ -13,16 +13,24 @@ while (($user_guess < 1) || ($user_guess > 100)) {
 	$user_guess = fgets(STDIN);
 }
 
+
+
 do {
-	if($user_guess > $number){
-		fwrite(STDOUT, PHP_EOL . "That's too high." . PHP_EOL);
+
+	if (($user_guess < 1) || ($user_guess > 100)) {
+		fwrite(STDOUT, PHP_EOL . "You're not even trying!" . PHP_EOL);
 		fwrite(STDOUT, "Try again: ");
 		$user_guess = fgets(STDIN);
-
-		} else {
-			fwrite(STDOUT, PHP_EOL . "That's too low." . PHP_EOL);
+	}
+		elseif($user_guess > $number){
+			fwrite(STDOUT, PHP_EOL . "That's too high." . PHP_EOL);
 			fwrite(STDOUT, "Try again: ");
 			$user_guess = fgets(STDIN);
+
+		}  else {
+				fwrite(STDOUT, PHP_EOL . "That's too low." . PHP_EOL);
+				fwrite(STDOUT, "Try again: ");
+				$user_guess = fgets(STDIN);
 		}
 	} while(($user_guess < $number) || ($user_guess > $number));
 
