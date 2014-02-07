@@ -13,8 +13,6 @@ while (($user_guess < 1) || ($user_guess > 100)) {
 	$user_guess = fgets(STDIN);
 }
 
-
-
 do {
 
 	if (($user_guess < 1) || ($user_guess > 100)) {
