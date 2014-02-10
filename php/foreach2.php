@@ -23,6 +23,8 @@ $books = array(
     )
 );
 
+ksort($books);
+
 foreach ($books as $book => $book_info){
 	fwrite(STDOUT, PHP_EOL . "{$book}: " . PHP_EOL);
 
