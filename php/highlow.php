@@ -1,5 +1,7 @@
 <?php
 
+print_r($argv);
+
 $number = 0;
 $low_val = 0;
 $high_val = 0;
