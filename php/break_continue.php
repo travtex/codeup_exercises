@@ -16,7 +16,7 @@ fwrite (STDOUT, PHP_EOL);
 for ($i = 0; $i <= 100; $i++) {
 	fwrite (STDOUT, $i . ".. ");
 		if ($i >= 10) {
-			fwrite(STDOUT, "aaaaaand BREAK!" . PHP_EOL);
+			fwrite(STDOUT, "aaaaaand BREAK!" . PHP_EOL . PHP_EOL);
 			break;
 	}
 }
