@@ -38,26 +38,33 @@ fwrite(STDOUT, 'Which day would you rather it be? (1-7): ');
 
 $new_day = trim(fgets(STDIN));
 
-switch(intval($new_day)) {
+switch(substr(strtolower($new_day), 0, 3)) {
     case 1:
+    case 'mon':
         fwrite(STDOUT, 'Monday' . PHP_EOL);
         break;
-    case 2: 
+    case 2:
+    case 'tue': 
 		fwrite(STDOUT, 'Tuesday' . PHP_EOL);
 		break;
 	case 3:
+	case 'wed':
 		fwrite(STDOUT, 'Wednesday' . PHP_EOL);
 		break;
 	case 4:
+	case 'thu':
 		fwrite(STDOUT, 'Thursday' . PHP_EOL);
 		break;
 	case 5:
+	case 'fri':
 		fwrite(STDOUT, 'Friday' . PHP_EOL);
 		break;
 	case 6:
+	case 'sat':
 		fwrite(STDOUT, 'Saturday' . PHP_EOL);
 		break;
 	case 7:
+	case 'sun':
 		fwrite(STDOUT, 'Sunday' . PHP_EOL);
 		break;
 	default:
