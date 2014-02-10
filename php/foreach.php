@@ -17,6 +17,8 @@ foreach ($things as $thing){
 			fwrite(STDOUT, "(Here Be Booleans.)");
 		}
 		elseif (is_array($thing)){
+
+			// $my_array = implode(",", $thing);
 			foreach($thing as $thinglet){
 				fwrite(STDOUT, "{$thinglet}..");
 			}

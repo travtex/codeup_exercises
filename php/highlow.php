@@ -1,15 +1,12 @@
 <?php
 
-<<<<<<< HEAD
-print_r($argv);
-=======
+
 $options = getopt("l:h:");
 //var_dump($options);
 //var_dump($argv);
 
 // echo $options["l"];
 // echo $argv[0];
->>>>>>> d953c883c56e0fd40676527f65bf89bd5e62ec08
 
 $number = 0;
 $low_val = 0;
