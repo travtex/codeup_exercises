@@ -45,7 +45,7 @@ fwrite(STDOUT, PHP_EOL . "These books were written after 1950:" . PHP_EOL . PHP_
 foreach ($books as $book => $book_info){
 	foreach ($book_info as $key => $value) {
 		if ($key == 'Published' && intval($value) > 1950) {
-			fwrite(STDOUT, "\t\t\"{$book}\" was published in {$value}." . PHP_EOL);
+			fwrite(STDOUT, "\t\t\"{$book}\" was published in {$book_info['Published']}." . PHP_EOL);
 		}
 	}
 
