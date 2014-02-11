@@ -13,7 +13,9 @@ function error($num1, $num2) {
 	$nums = [$num1, $num2];
 	$error = [];
 	foreach ($nums as $num) {
+		if (!is_numeric($num)){
 		$error[] = fwrite(STDOUT, "** ERROR ** $num is not numeric." . PHP_EOL);
+	}
 		}
 		return $error;
 }
@@ -47,7 +49,7 @@ function multiply($num1, $num2) {
 }
 
 function divide($num1, $num2) {
-	if ($num2 === 0){
+	if (empty($num2)){
 		fwrite(STDIN, "** Cannot divide by zero." . PHP_EOL);
 	}
 		elseif (is_numeric($num1) && is_numeric($num2)) {
@@ -59,9 +61,10 @@ function divide($num1, $num2) {
 }
 
 function mod($num1, $num2) {
-	if ($num2 === 0) {
+	if (empty($num2)) {
 		fwrite(STDIN, "** Cannot divide by zero." . PHP_EOL);
 	}
+		
 		elseif (is_numeric($num1) && is_numeric($num2)){
 			fwrite(STDIN, ($num1 % $num2) . PHP_EOL);
 		} 
