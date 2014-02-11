@@ -8,11 +8,6 @@ if($argc > 1) {
 	$b = 10;
 }
 
-// function error($num1, $num2) {
-// 	return fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL .
-// 			"You entered {$num1} and {$num2}." . PHP_EOL);
-// }
-
 function error($num1, $num2) {
 
 	$nums = [$num1, $num2];
