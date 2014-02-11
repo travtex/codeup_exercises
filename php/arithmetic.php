@@ -8,6 +8,10 @@ if($argc > 1) {
 	$b = 10;
 }
 
+// function numIsValid($num, &$error = '') {
+
+// }
+
 function error($num1, $num2) {
 
 	$nums = [$num1, $num2];
@@ -17,6 +21,7 @@ function error($num1, $num2) {
 		$error[] = fwrite(STDOUT, "** ERROR ** $num is not numeric." . PHP_EOL);
 	}
 		}
+		// var_dump($error);
 		return $error;
 }
 
