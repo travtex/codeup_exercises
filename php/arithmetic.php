@@ -38,23 +38,29 @@ function multiply($num1, $num2) {
 }
 
 function divide($num1, $num2) {
-	if (is_numeric($num1) && is_numeric($num2)) {
-	fwrite(STDIN, ($num1 / $num2) . PHP_EOL);
+	if ($num2 == 0){
+		fwrite(STDIN, "** Cannot divide by zero." . PHP_EOL);
 	}
-	else {
-		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
+		elseif (is_numeric($num1) && is_numeric($num2)) {
+		fwrite(STDIN, ($num1 / $num2) . PHP_EOL);
+		}
+		else {
+			fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
 
-	}
+		}
 }
 
 function mod($num1, $num2) {
-	if (is_numeric($num1) && is_numeric($num2)){
-	fwrite(STDIN, ($num1 % $num2) . PHP_EOL);
-	} 
-	else {
-		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
-
+	if ($num2 == 0) {
+		fwrite(STDIN, "** Cannot divide by zero." . PHP_EOL);
 	}
+		elseif (is_numeric($num1) && is_numeric($num2)){
+		fwrite(STDIN, ($num1 % $num2) . PHP_EOL);
+		} 
+		else {
+			fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
+
+		}
 }
 
 add($a, $b);
