@@ -1,5 +1,15 @@
 <?php
 
+	
+if ($argc > 0) {
+	
+	$my_nums = $argv;
+	unset($my_nums[0]);
+	array_values($my_nums);
+
+}
+
+// var_dump($my_nums);
 
 function add() {
 	$args = func_get_args();
@@ -17,7 +27,6 @@ function add() {
 	return $sum;
 }
 
-echo add(5,4,3,2,1) . PHP_EOL; 
 
 function subtract() {
 	$args = func_get_args();
@@ -35,7 +44,6 @@ function subtract() {
 	return $diff;
 }
 
-echo subtract(5,4,3,2,1) . PHP_EOL; 
 
 function multiply() {
 	$args = func_get_args();
@@ -55,7 +63,6 @@ function multiply() {
 	return $product;
 }
 
-echo multiply(5,4,3,2,1) . PHP_EOL; 
 
 function divide() {
 	$args = func_get_args();
@@ -75,7 +82,10 @@ function divide() {
 		return $answer;
 }
 
-echo divide(5,4,3,2,1) . PHP_EOL; 
+echo call_user_func_array('add', $my_nums) . PHP_EOL; 
+echo call_user_func_array('subtract', $my_nums) . PHP_EOL; 
+echo call_user_func_array('multiply', $my_nums) . PHP_EOL; 
+echo call_user_func_array('divide', $my_nums) . PHP_EOL; 
 
 
 ?>
