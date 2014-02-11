@@ -55,6 +55,7 @@ function multiply($num1, $num2) {
 function divide($num1, $num2) {
 	if (empty($num2)){
 		fwrite(STDIN, "** Cannot divide by zero." . PHP_EOL);
+		return false;
 	}
 		elseif (is_numeric($num1) && is_numeric($num2)) {
 			return $num1 / $num2;
@@ -67,6 +68,7 @@ function divide($num1, $num2) {
 function mod($num1, $num2) {
 	if (empty($num2)) {
 		fwrite(STDIN, "** Cannot divide by zero." . PHP_EOL);
+		return false;
 	}
 		
 		elseif (is_numeric($num1) && is_numeric($num2)){
