@@ -15,42 +15,41 @@ if($argc > 1) {
 function error($num1, $num2) {
 
 	$nums = [$num1, $num2];
-	$error = [];
+	
 	foreach ($nums as $num) {
 		if (!is_numeric($num)){
-		$error[] = fwrite(STDOUT, "** ERROR ** $num is not numeric." . PHP_EOL);
-	}
+			fwrite(STDOUT, "** ERROR ** $num is not numeric." . PHP_EOL);
 		}
-		// var_dump($error);
-		return $error;
+	}
+		
 }
 
 function add($num1, $num2) {
 	if (is_numeric($num1) && is_numeric($num2)) {
-    fwrite(STDIN, ($num1 + $num2) . PHP_EOL);
+	    return $num1 + $num2;
 	}
-	else {
-		error($num1, $num2);
-	}
+		else {
+			error($num1, $num2);
+		}
 }
 
 function subtract($num1, $num2) {
 	if (is_numeric($num1) && is_numeric($num2)) {
-	fwrite(STDIN, ($num1 - $num2) . PHP_EOL);
+		return $num1 - $num2;
 	}
-	else {
-		error($num1, $num2);
-	}
+		else {
+			error($num1, $num2);
+		}
 }
 
 function multiply($num1, $num2) {
 	if (is_numeric($num1) && is_numeric($num2)) {
-	fwrite(STDIN, ($num1 * $num2) . PHP_EOL);
+		return $num1 * $num2;
 	}
-	else {
-		error($num1, $num2);
+		else {
+			error($num1, $num2);
 
-	}
+		}
 }
 
 function divide($num1, $num2) {
@@ -58,7 +57,7 @@ function divide($num1, $num2) {
 		fwrite(STDIN, "** Cannot divide by zero." . PHP_EOL);
 	}
 		elseif (is_numeric($num1) && is_numeric($num2)) {
-			fwrite(STDIN, ($num1 / $num2) . PHP_EOL);
+			return $num1 / $num2;
 		}
 		else {
 			error($num1, $num2);
@@ -71,17 +70,17 @@ function mod($num1, $num2) {
 	}
 		
 		elseif (is_numeric($num1) && is_numeric($num2)){
-			fwrite(STDIN, ($num1 % $num2) . PHP_EOL);
+			return $num1 % $num2;
 		} 
 		else {
 			error($num1, $num2);
 		}
 }
 
-add($a, $b);
-subtract($a, $b);
-multiply($a, $b);
-divide($a, $b);
-mod($a, $b);
+fwrite(STDIN, add($a, $b) . PHP_EOL);
+fwrite(STDIN, subtract($a, $b) . PHP_EOL);
+fwrite(STDIN, multiply($a, $b) . PHP_EOL);
+fwrite(STDIN, divide($a, $b) . PHP_EOL);
+fwrite(STDIN, mod($a, $b) . PHP_EOL);
 
 ?>
