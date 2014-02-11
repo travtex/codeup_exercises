@@ -8,6 +8,7 @@ if($argc > 1) {
 	$b = 10;
 }
 
+
 function add($num1, $num2) {
     fwrite(STDIN, ($num1 + $num2) . PHP_EOL);
 }
