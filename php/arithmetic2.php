@@ -9,13 +9,12 @@ function add() {
 	if($numargs >=2){
 		foreach ($args as $arg){
 			$sum += $arg;
-		} return $sum;
-		
-		} elseif ($numargs == 1) {
-			return $args[0] + $args[0];
-		} else {
-			return 0;
 		}
+	} elseif ($numargs == 1) {
+		$sum = $args[0] + $args[0];
+	}
+
+	return $sum;
 }
 
 echo add(5,4,3,2,1) . PHP_EOL; 
@@ -28,13 +27,12 @@ function subtract() {
 	if($numargs >=2){
 		foreach ($args as $arg){
 			$diff -= $arg;
-		} return $diff;
+		} 
 		
-		} elseif ($numargs == 1) {
-			return ($args[0] - $args[0]);
-		} else {
-			return 0;
-		}
+	} elseif ($numargs == 1) {
+		$diff = ($args[0] - $args[0]);
+	} 
+	return $diff;
 }
 
 echo subtract(5,4,3,2,1) . PHP_EOL; 
@@ -47,13 +45,14 @@ function multiply() {
 	if($numargs >=2){
 		foreach ($args as $arg){
 			$product *= $arg;
-		} return $product;
-		
-		} elseif ($numargs == 1) {
-			return ($args[0] * $args[0]);
-		} else {
-			return 0;
-		}
+		} 
+	
+	} elseif ($numargs == 1) {
+		$product = ($args[0] * $args[0]);
+	} else {
+		$product = 0;
+	}
+	return $product;
 }
 
 echo multiply(5,4,3,2,1) . PHP_EOL; 
@@ -66,13 +65,14 @@ function divide() {
 	if($numargs >=2){
 		foreach ($args as $arg){
 			$answer /= $arg;
-		} return $answer;
+		} 
 		
 		} elseif ($numargs == 1) {
-			return ($args[0] / $args[0]);
+			$answer = ($args[0] / $args[0]);
 		} else {
-			return 0;
+			$answer = 0;
 		}
+		return $answer;
 }
 
 echo divide(5,4,3,2,1) . PHP_EOL; 

@@ -10,23 +10,51 @@ if($argc > 1) {
 
 
 function add($num1, $num2) {
+	if (is_numeric($num1) && is_numeric($num2)) {
     fwrite(STDIN, ($num1 + $num2) . PHP_EOL);
+	}
+	else {
+		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
+	}
 }
 
 function subtract($num1, $num2) {
+	if (is_numeric($num1) && is_numeric($num2)) {
 	fwrite(STDIN, ($num1 - $num2) . PHP_EOL);
+	}
+	else {
+		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
+	}
 }
 
 function multiply($num1, $num2) {
+	if (is_numeric($num1) && is_numeric($num2)) {
 	fwrite(STDIN, ($num1 * $num2) . PHP_EOL);
+	}
+	else {
+		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
+
+	}
 }
 
 function divide($num1, $num2) {
+	if (is_numeric($num1) && is_numeric($num2)) {
 	fwrite(STDIN, ($num1 / $num2) . PHP_EOL);
+	}
+	else {
+		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
+
+	}
 }
 
 function mod($num1, $num2) {
+	if (is_numeric($num1) && is_numeric($num2)){
 	fwrite(STDIN, ($num1 % $num2) . PHP_EOL);
+	} 
+	else {
+		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL);
+
+	}
 }
 
 add($a, $b);
