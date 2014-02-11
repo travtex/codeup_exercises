@@ -8,14 +8,18 @@ if($argc > 1) {
 	$b = 10;
 }
 
+function error($num1, $num2) {
+	return fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL .
+			"You entered {$num1} and {$num2}." . PHP_EOL);
+}
+
 
 function add($num1, $num2) {
 	if (is_numeric($num1) && is_numeric($num2)) {
     fwrite(STDIN, ($num1 + $num2) . PHP_EOL);
 	}
 	else {
-		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL .
-			"You entered {$num1} and {$num2}." . PHP_EOL);
+		error($num1, $num2);
 	}
 }
 
@@ -24,8 +28,7 @@ function subtract($num1, $num2) {
 	fwrite(STDIN, ($num1 - $num2) . PHP_EOL);
 	}
 	else {
-		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL . 
-			"You entered {$num1} and {$num2}." . PHP_EOL);
+		error($num1, $num2);
 	}
 }
 
@@ -34,8 +37,7 @@ function multiply($num1, $num2) {
 	fwrite(STDIN, ($num1 * $num2) . PHP_EOL);
 	}
 	else {
-		fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL . 
-			"You entered {$num1} and {$num2}." . PHP_EOL);
+		error($num1, $num2);
 
 	}
 }
@@ -48,8 +50,7 @@ function divide($num1, $num2) {
 			fwrite(STDIN, ($num1 / $num2) . PHP_EOL);
 		}
 		else {
-			fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL . 
-			"You entered {$num1} and {$num2}." . PHP_EOL);
+			error($num1, $num2);
 		}
 }
 
@@ -61,8 +62,7 @@ function mod($num1, $num2) {
 			fwrite(STDIN, ($num1 % $num2) . PHP_EOL);
 		} 
 		else {
-			fwrite(STDIN, "** Both \$args must be numeric." . PHP_EOL . 
-			"You entered {$num1} and {$num2}." . PHP_EOL);
+			error($num1, $num2);
 		}
 }
 
