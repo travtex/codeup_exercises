@@ -31,7 +31,9 @@ function add() {
 function subtract() {
 	$args = func_get_args();
 	$numargs = func_num_args();
-	$diff = 0;
+	$diff = $args[0];
+	unset($args[0]);
+	array_values($args);
 
 	if($numargs >=2){
 		foreach ($args as $arg){
@@ -50,14 +52,19 @@ function multiply() {
 	$numargs = func_num_args();
 	$product = 1;
 
-	if($numargs >=2){
+	if (in_array(0, $args)) {
+		return 0;
+	}
+	elseif ($numargs >=2){
 		foreach ($args as $arg){
 			$product *= $arg;
 		} 
 	
-	} elseif ($numargs == 1) {
+	} 
+	elseif ($numargs == 1) {
 		$product = ($args[0] * $args[0]);
-	} else {
+	} 
+	else {
 		$product = 0;
 	}
 	return $product;
@@ -67,16 +74,24 @@ function multiply() {
 function divide() {
 	$args = func_get_args();
 	$numargs = func_num_args();
-	$answer = 1;
+	$answer = $args[0];
+	unset($args[0]);
+	array_values($args);
 
-	if($numargs >=2){
+	if(in_array(0, $args)) {
+		return "** ERROR ** Cannot divide by zero." . PHP_EOL;
+	}
+
+	elseif ($numargs >=2){
 		foreach ($args as $arg){
 			$answer /= $arg;
 		} 
 		
-		} elseif ($numargs == 1) {
+	} 
+	elseif ($numargs == 1) {
 			$answer = ($args[0] / $args[0]);
-		} else {
+	} 
+	else {
 			$answer = 0;
 		}
 		return $answer;
