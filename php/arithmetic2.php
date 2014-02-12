@@ -1,13 +1,16 @@
 <?php
 
 	
-if ($argc > 0) {
+if ($argc > 1) {
 	
 	$my_nums = $argv;
 	unset($my_nums[0]);
 	array_values($my_nums);
 
 }
+	else {
+		$my_nums = [5, 4, 3, 2, 1];
+	}
 
 // var_dump($my_nums);
 
