@@ -31,10 +31,10 @@ function get_input($upper = FALSE)
 
 // Assign random todo list item.
 
-function assign_todo() 
+function assign_todo($jobs) 
 {
-    $items = func_get_args();
-    $task = mt_rand(0, (count($items) - 1));
+    // $items = func_get_args();
+    $task = mt_rand(0, (count($jobs) - 1));
     return $task;
 
 }
@@ -85,7 +85,7 @@ do
             {
                 // Select a random task and give option to remove it
                 $input = '';
-                $key = call_user_func_array('assign_todo', $items);
+                $key = assign_todo($items);
 
                 echo PHP_EOL . 'Your assigned task is: ' . $items[$key]
                 . '.' . PHP_EOL;
