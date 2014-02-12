@@ -33,7 +33,7 @@ function get_input($upper = FALSE)
 
 function assign_todo($jobs) 
 {
-    // $items = func_get_args();
+    
     $task = mt_rand(0, (count($jobs) - 1));
     return $task;
 
@@ -42,11 +42,6 @@ function assign_todo($jobs)
 // The loop!
 do 
 {
-    // Iterate through list items
-    // foreach ($items as $key => $item) {
-    //     // Display each item and a newline
-    //     echo "[" . ($key + 1) . "] {$item}\n";
-    // }
 
     echo PHP_EOL . list_items($items) . PHP_EOL;
 
