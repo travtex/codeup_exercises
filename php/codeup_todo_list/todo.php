@@ -63,8 +63,8 @@ do {
 // Exit when input is (Q)uit
 } while ($input != 'Q');
 
-// Say Goodbye!
 echo "Goodbye!\n";
 
-// Exit with 0 errors
 exit(0);
+
+?>
