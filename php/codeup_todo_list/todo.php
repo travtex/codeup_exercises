@@ -13,7 +13,7 @@ function list_items($items)
     foreach ($items as $key => $item) 
     {
         $user_key = ++$key;
-        $list_view .= "[" . $user_key . "] {$item}" . PHP_EOL;
+        $list_view .= "[{$user_key}] {$item}" . PHP_EOL;
     }
 
     return $list_view;
