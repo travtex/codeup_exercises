@@ -30,6 +30,8 @@ function get_input($upper = FALSE)
     
 }
 
+// Assign random todo list item.
+
 function assign_todo() 
 {
     $items = func_get_args();
