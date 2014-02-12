@@ -20,7 +20,8 @@ function add() {
 		foreach ($args as $arg){
 			$sum += $arg;
 		}
-	} elseif ($numargs == 1) {
+	} 
+	elseif ($numargs == 1) {
 		$sum = $args[0] + $args[0];
 	}
 
@@ -40,9 +41,11 @@ function subtract() {
 			$diff -= $arg;
 		} 
 		
-	} elseif ($numargs == 1) {
+	} 
+	elseif ($numargs == 1) {
 		$diff = ($args[0] - $args[0]);
 	} 
+	
 	return $diff;
 }
 
@@ -55,18 +58,22 @@ function multiply() {
 	if (in_array(0, $args)) {
 		return 0;
 	}
+	
 	elseif ($numargs >=2){
 		foreach ($args as $arg){
 			$product *= $arg;
 		} 
 	
 	} 
+	
 	elseif ($numargs == 1) {
 		$product = ($args[0] * $args[0]);
 	} 
+	
 	else {
 		$product = 0;
 	}
+	
 	return $product;
 }
 
@@ -88,9 +95,11 @@ function divide() {
 		} 
 		
 	} 
+	
 	elseif ($numargs == 1) {
 			$answer = ($args[0] / $args[0]);
 	} 
+	
 	else {
 			$answer = 0;
 		}
