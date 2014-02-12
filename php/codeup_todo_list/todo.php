@@ -26,7 +26,7 @@ function get_input($upper = FALSE)
     
     $user_input = trim(fgets(STDIN));
 
-    return ($upper == TRUE) ? strtoupper($user_input) : $user_input;
+    return ($upper) ? strtoupper($user_input) : $user_input;
     
 }
 
