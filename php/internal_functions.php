@@ -8,8 +8,7 @@ $array = array(1,2,3);
 
 function var_is_set($variable) {
 
-	return isset($variable) ?  'SET' 
-					 		:  'EMPTY';
+	return isset($variable) ?  'SET' :  'EMPTY';
 }
 
 // TEST: If var $nothing is set, display '$nothing is SET'
