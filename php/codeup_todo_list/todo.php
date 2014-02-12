@@ -12,7 +12,7 @@ function list_items($items)
 
     foreach ($items as $key => $item) 
     {
-        $user_key = ++$key;
+        $user_key = $key + 1;
         $list_view .= "[{$user_key}] {$item}" . PHP_EOL;
     }
 
@@ -46,7 +46,7 @@ do
     echo PHP_EOL . list_items($items) . PHP_EOL;
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (A)ssign random item, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (S)ort items, (A)ssign random item, (Q)uit : ';
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
@@ -59,8 +59,7 @@ do
         echo 'Enter item: ';
         // Add entry to list array
         $items[] = get_input();
-    } 
-    
+    }
     elseif ($input == 'R') 
     {
         // Remove which item?
@@ -74,7 +73,7 @@ do
     elseif ($input == 'A')
     {
 
-        if ($items) 
+        if (!empty($items)) 
         {
             while ($input != 'Y' || $input != 'N') 
             {
@@ -105,18 +104,39 @@ do
                 }
 
             }
-        } 
+        }
+
         else 
         {
             echo PHP_EOL . "There are no list items to assign." . PHP_EOL;
-    }
+        }
     
 
 // Exit when input is (Q)uit
 
     } 
+    elseif ($input == 'S')
+        {
+            while ($input != 'A' || $input != 'Z') 
+            {
+                echo PHP_EOL . "How would you like to sort the list items?" . PHP_EOL
+                 . "(A) to Z, or (Z) to A?: ";
+                $input = get_input(TRUE);
+
+                if ($input == 'A')
+                {
+                    sort($items);
+                    break;
+                }
+                elseif ($input == 'Z') 
+                {
+                    rsort($items);
+                    break;
+                }
+            }
+        } 
 }
-    while ($input != 'Q');
+while ($input != 'Q');
 
 echo "Goodbye!\n";
 
