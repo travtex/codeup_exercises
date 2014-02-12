@@ -35,7 +35,7 @@ function get_input($upper = FALSE)
 function assign_todo() 
 {
     $items = func_get_args();
-    $task = rand(0, (count($items) - 1));
+    $task = mt_rand(0, (count($items) - 1));
     return $task;
 
 }
