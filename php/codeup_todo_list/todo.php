@@ -12,7 +12,7 @@ function list_items($items)
 
     foreach ($items as $key => $item) 
     {
-        $user_key = $key + 1;
+        $user_key = ++$key;
         $list_view = $list_view . "[" . $user_key . "] {$item}" . PHP_EOL;
     }
 
@@ -74,7 +74,7 @@ do
         // Get array key
         $key = get_input();
         // Remove from array
-        unset($items[$key - 1]);
+        unset($items[--$key]);
         $items = array_values($items);
     }
     elseif ($input == 'A')
