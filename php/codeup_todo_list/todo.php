@@ -24,14 +24,8 @@ function get_input()
 {
     $user_input = trim(fgets(STDIN));
 
-    if (ctype_lower($user_input))
-    {
-        return strtoupper($user_input);
-    }
-    else 
-    {
-        return $user_input;
-    }
+    return ctype_lower($user_input) ?  strtoupper($user_input) :  $user_input;
+
 }
 
 // The loop!
