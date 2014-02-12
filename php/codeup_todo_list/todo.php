@@ -20,7 +20,8 @@ function list_items($items)
 
 // Get user input
 
-function get_input($upper = FALSE){
+function get_input($upper = FALSE)
+{
     
     $user_input = trim(fgets(STDIN));
 
@@ -46,13 +47,16 @@ do {
     $input = get_input(TRUE);
 
     // Check for actionable input
-    if ($input == 'N') {
+    if ($input == 'N') 
+    {
         // Ask for entry
         echo 'Enter item: ';
         // Add entry to list array
         $items[] = get_input();
     } 
-    elseif ($input == 'R') {
+    
+    elseif ($input == 'R') 
+    {
         // Remove which item?
         echo 'Enter item number to remove: ';
         // Get array key
@@ -63,7 +67,7 @@ do {
     }
 
 // Exit when input is (Q)uit
-    
+
 } while ($input != 'Q');
 
 echo "Goodbye!\n";
