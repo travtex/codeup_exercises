@@ -68,7 +68,7 @@ do
         // Get array key
         $key = get_input();
         // Remove from array
-        unset($items[--$key]);
+        unset($items[($key - 1)]);
         $items = array_values($items);
     }
     elseif ($input == 'A')
