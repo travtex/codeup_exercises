@@ -20,12 +20,12 @@ function list_items($items)
 
 // Get user input
 
-function get_input()
-{
+function get_input($upper = FALSE){
+    
     $user_input = trim(fgets(STDIN));
 
-    return ctype_lower($user_input) ?  strtoupper($user_input) :  $user_input;
-
+    return ($upper == TRUE) ? strtoupper($user_input) : $user_input;
+    
 }
 
 // The loop!
@@ -43,24 +43,27 @@ do {
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
-    $input = get_input();
+    $input = get_input(TRUE);
 
     // Check for actionable input
     if ($input == 'N') {
         // Ask for entry
         echo 'Enter item: ';
         // Add entry to list array
-        $items[] = trim(fgets(STDIN));
-    } elseif ($input == 'R') {
+        $items[] = get_input();
+    } 
+    elseif ($input == 'R') {
         // Remove which item?
         echo 'Enter item number to remove: ';
         // Get array key
-        $key = trim(fgets(STDIN));
+        $key = get_input();
         // Remove from array
         unset($items[$key - 1]);
         $items = array_values($items);
     }
+
 // Exit when input is (Q)uit
+    
 } while ($input != 'Q');
 
 echo "Goodbye!\n";
