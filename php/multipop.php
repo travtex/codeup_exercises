@@ -13,9 +13,12 @@ function multipop(&$array, $num)
 
 // Test
 
-// $my_array = [1,2,3,4,5];
+$my_array = [1,2,3,4,5];
 
+
+var_dump($my_array);
+multipop($my_array, 2);
 // var_dump(multipop($my_array, 3));
-// var_dump($my_array);
+var_dump($my_array);
 
 ?>
