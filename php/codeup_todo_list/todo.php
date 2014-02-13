@@ -58,7 +58,22 @@ do
         // Ask for entry
         echo 'Enter item: ';
         // Add entry to list array
-        $items[] = get_input();
+        $user_item = get_input();
+
+        echo 'Do you want to make this item the (F)irst or (L)ast on the list?: ';
+
+        $first_last = get_input(TRUE);
+
+        // Place item at beginning or end or $items array.
+        
+        if($first_last == 'F')
+        {
+            array_unshift($items, $user_item);
+        }
+        elseif($first_last == 'L')
+        {
+            $items[] = $user_item;
+        }
     }
     elseif ($input == 'R') 
     {
