@@ -4,7 +4,6 @@
 
 function multipop(&$array, $num)
 {
-	$return_array = [];
 	for($count = 0; $count < $num; $count++)
 	{
 		array_pop($array);
