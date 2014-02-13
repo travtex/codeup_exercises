@@ -1,13 +1,13 @@
 <?php
 
-function multipop($array, $num)
+function multipop(&$array, $num)
 {
 	$return_array = [];
 	for($count = 0; $count < $num; $count++)
 	{
-		$return_array[] = array_pop($array);
+		array_pop($array);
 	}
-	return $return_array;
+	return $array;
 }
 
 // Test
@@ -15,6 +15,6 @@ function multipop($array, $num)
 // $my_array = [1,2,3,4,5];
 
 // var_dump(multipop($my_array, 3));
-
+// var_dump($my_array);
 
 ?>
