@@ -6,14 +6,16 @@ function display_array($array)
 	{
 		if(is_array($value))
 		{
+			echo "{$key}:" . PHP_EOL;
 			display_array($value);
 			// echo "\t";
+			
 		}
 		else 
 		{
 			if(array_key_exists($value, $array))
 			{
-				echo "\t{$key} : $value" . PHP_EOL;
+				echo "{$key} : $value" . PHP_EOL;
 			}
 			else
 			{
@@ -24,7 +26,7 @@ function display_array($array)
 }
 
 
-$test_array =['array1' => [ 'item1' => 1,2,3],[4,5,6, ['a','b','c']],'Hi',[7,8,9]];
+$test_array =['Array 1' => [1,2,3], 'Array 2' => [4,5,6]];
 
 display_array($test_array);
 
