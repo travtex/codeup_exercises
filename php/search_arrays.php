@@ -4,6 +4,9 @@
 $names = ['Tina', 'Dana', 'Mike', "Amy", 'Adam'];
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
+
+// functional equivalent to in_array()
+
 function check_name($name, $array)
 {
 	// return in_array($name, $array);
@@ -17,10 +20,12 @@ function check_name($name, $array)
 	}
 }
 
+// functional equivalent to array_intersect()
+
 function compare_names($array1, $array2)
 {
 	$counter = 0;
-	foreach($array1 as $key => $name)
+	foreach($array1 as $name)
 	{
 		if (check_name($name, $array2) == TRUE)
 		{
