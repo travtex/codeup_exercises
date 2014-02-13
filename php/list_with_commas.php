@@ -8,6 +8,8 @@ function get_input($upper = FALSE)
 
 }
 
+// Returns a list of names in the array, option to alphabetize by first name
+
 function humanized_list($array, $alpha = FALSE)
 {
 	$last_item = '';
@@ -23,6 +25,13 @@ function humanized_list($array, $alpha = FALSE)
 	}
 
 	return implode(', ' , $array) . ", and {$last_item}";
+}
+
+// Returns the list of names alphabetized by last name
+
+function sort_by_surname($array)
+{
+
 }
 
 $physicists_string = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
