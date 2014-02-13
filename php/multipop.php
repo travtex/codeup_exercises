@@ -1,5 +1,7 @@
 <?php
 
+// Pops $num entries from original array
+
 function multipop(&$array, $num)
 {
 	$return_array = [];
