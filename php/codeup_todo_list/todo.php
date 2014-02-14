@@ -55,6 +55,18 @@ function import_data($filename)
     }
 }
 
+function save_file($filename, $items)
+{
+
+    $handle = fopen($filename, "w");
+    foreach($items as $item)
+    {
+        fwrite($handle, PHP_EOL . $item);
+    }
+    fclose($handle);
+
+}
+
 $items = import_data("../data/todo_list.txt");
 // The loop!
 do 
@@ -170,7 +182,34 @@ do
 }
 while ($input != 'Q');
 
-echo "Goodbye!\n";
+echo "Do you want to save your changes? (Y/N): ";
+$save = get_input(TRUE);
+
+if ($save == 'Y')
+{
+    echo PHP_EOL . "Please enter your save file name: ";
+    $save_name = get_input();
+    if(filesize($save_name) != 0)
+    {
+        echo PHP_EOL . $save_name . " exists.  Overwrite file? (Y/N): ";
+        $overwrite = get_input(TRUE);
+
+        if($overwrite == 'Y')
+        {
+            save_file($save_name, $items);
+        }
+        else
+        {
+            echo PHP_EOL . "File not saved.  Goodbye!\n";
+        }
+    }
+    else
+    {
+        save_file($save_name, $items);
+    }
+}
+
+echo PHP_EOL . "Goodbye!\n";
 
 exit(0);
 
