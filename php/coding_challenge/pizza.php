@@ -3,6 +3,7 @@
 $large = 8;
 $medium = 6;
 $small = 4;
+$slices = 0;
 
 function get_input($upper = FALSE)
 {
@@ -12,19 +13,26 @@ function get_input($upper = FALSE)
 
 }
 
-echo "How many guests eat only 1 slice of pizza?: ";
-$slices = get_input();
+function get_slice()
+{
 
-echo "How many guests eat 2 slices of pizza?: ";
-$slices += get_input() * 2;
+	echo "How many guests eat only 1 slice of pizza?: ";
+	$slices = get_input();
 
-echo "How many guests eat 3 slices of pizza?: ";
-$slices += get_input() * 3;
+	echo "How many guests eat 2 slices of pizza?: ";
+	$slices += get_input() * 2;
 
-echo "How many guests eat 4 slices of pizza?: ";
-$slices += get_input() * 4;
+	echo "How many guests eat 3 slices of pizza?: ";
+	$slices += get_input() * 3;
+
+	echo "How many guests eat 4 slices of pizza?: ";
+	$slices += get_input() * 4;
+	return $slices;
+}
 
 //var_dump($slices);
+
+$slices = get_slice();
 
 echo "You're going to need:" . PHP_EOL . PHP_EOL;
 
