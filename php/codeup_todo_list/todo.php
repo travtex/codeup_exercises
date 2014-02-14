@@ -189,7 +189,8 @@ if ($save == 'Y')
 {
     echo PHP_EOL . "Please enter your save file name: ";
     $save_name = get_input();
-    if(filesize($save_name) != 0)
+    
+    if(file_exists($save_name))
     {
         echo PHP_EOL . $save_name . " exists.  Overwrite file? (Y/N): ";
         $overwrite = get_input(TRUE);
