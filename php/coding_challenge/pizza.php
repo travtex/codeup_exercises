@@ -28,33 +28,33 @@ $slices += get_input() * 4;
 
 echo "You're going to need:" . PHP_EOL . PHP_EOL;
 
-$need_large = intval($slices/8);
-
+$need_large = $slices/8;
 $slices = $slices%$large;
+$need_medium = $slices/6;
+$slices = $slices%$medium;
+$need_small = $slices/4;
+$slices = $slices%$small;
 
-echo "Large Pizzas: " . $need_large . PHP_EOL;
-
-
-if ($slices >= 4)
+if ($slices == 0)
 {
-	$need_medium = intval($slices/6);
-	$slices = $slices%$medium;
-	echo "Medium Pizzas: " . $need_medium . PHP_EOL;
-	$need_small = intval($slices/4);
-	$slices = $slices%$small;
-	echo "Small Pizzas: " . $need_small . PHP_EOL;
-
-if($slices >0)
+	echo "Large Pizzas: " . intval($need_large) . PHP_EOL;
+	echo "Medium Pizzas: " . intval($need_medium) . PHP_EOL;
+	echo "Small Pizzas: " . intval($need_small) . PHP_EOL;
+}
+else 
 {
-	echo "Small Pizzas: 1" . PHP_EOL;
+	$need_small++;
+	echo "Large Pizzas: " . intval($need_large) . PHP_EOL;
+	echo "Medium Pizzas: " . intval($need_medium) . PHP_EOL;
+	echo "Small Pizzas: " . intval($need_small) . PHP_EOL;
 }
 
 
-	
-
-}
 
 
-//var_dump($slices);
+// var_dump($slices);
+// var_dump($need_large);
+// var_dump($need_medium);
+// echo intval($need_small);
 
 ?>

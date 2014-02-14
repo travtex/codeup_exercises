@@ -41,12 +41,18 @@ function assign_todo($jobs)
 
 function import_data($filename)
 {
+    if (filesize($filename) == 0)
+    {
+        return FALSE;
+    }
+    else
+    {
     $handle = fopen($filename, "r");
     $contents = fread($handle, filesize($filename));
     $content_array = explode("\n", $contents);
     fclose($handle);
     return $content_array;
-
+    }
 }
 
 $items = import_data("../data/todo_list.txt");
