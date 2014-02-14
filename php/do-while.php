@@ -7,4 +7,6 @@ do {
 	$count *= $count;
 } while ($count < 1000000);
 
+exit(0);
+
 ?>

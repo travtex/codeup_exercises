@@ -34,4 +34,5 @@ elseif ($convert == 'B')
 	echo $dollars . " USD is " . $dollars * 0.6 . " pounds." . PHP_EOL;
 }
 exit(0);
+
 ?>

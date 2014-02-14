@@ -21,4 +21,6 @@ multipop($my_array, 2);
 // var_dump(multipop($my_array, 3));
 var_dump($my_array);
 
+exit(0);
+
 ?>

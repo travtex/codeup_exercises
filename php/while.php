@@ -7,4 +7,6 @@ while ($test <= 15) {
 	$test++;
 }
 
+exit(0);
+
 ?>

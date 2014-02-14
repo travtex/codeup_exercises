@@ -56,5 +56,5 @@ function multipop(&$array, $num)
 }
 
 
-
+exit(0);
 ?>

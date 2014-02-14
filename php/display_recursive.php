@@ -30,4 +30,6 @@ $test_array =['Array 1' => [1,2,3], 'Array 2' => [4,5,6]];
 
 display_array($test_array);
 
+exit(0);
+
 ?>

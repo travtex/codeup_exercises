@@ -49,4 +49,6 @@ $input = get_input(TRUE);
 echo PHP_EOL . "Some of the most famous fictional theoretical physicists are {$famous_fake_physicists}."
 	. PHP_EOL;
 
+exit(0);
+
 ?>

@@ -43,4 +43,6 @@ var_dump(check_name('Bob', $names));
 echo PHP_EOL . "The \$names and the \$compare arrays share " . compare_names($names, $compare)
 . " names." . PHP_EOL;
 
+exit(0);
+
 ?>

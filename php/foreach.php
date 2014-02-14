@@ -32,4 +32,7 @@ foreach ($things as $thing){
 		}
 	fwrite(STDOUT, PHP_EOL);
 	}
+
+exit(0);
+
 ?>

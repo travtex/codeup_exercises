@@ -27,3 +27,7 @@ while(!is_numeric($increment) || $increment < 1 || $increment > $high) {
 for($i = $low; ($i <= $high); $i += $increment) {
 	echo intval($i) . PHP_EOL;
 }
+
+exit(0);
+
+?>

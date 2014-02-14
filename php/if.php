@@ -36,4 +36,6 @@ if ($b === $c) {
 	echo "$b is not equal to $c\n";
 }
 
+exit(0);
+
 ?>

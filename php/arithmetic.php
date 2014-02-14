@@ -85,4 +85,6 @@ fwrite(STDIN, multiply($a, $b) . PHP_EOL);
 fwrite(STDIN, divide($a, $b) . PHP_EOL);
 fwrite(STDIN, mod($a, $b) . PHP_EOL);
 
+exit(0);
+
 ?>

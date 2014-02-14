@@ -114,5 +114,6 @@ echo call_user_func_array('subtract', $my_nums) . PHP_EOL;
 echo call_user_func_array('multiply', $my_nums) . PHP_EOL; 
 echo call_user_func_array('divide', $my_nums) . PHP_EOL; 
 
+exit(0);
 
 ?>

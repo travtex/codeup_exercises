@@ -57,7 +57,7 @@ else
 	echo "Small Pizzas: " . intval($need_small) . PHP_EOL;
 }
 
-
+exit(0);
 
 
 // var_dump($slices);

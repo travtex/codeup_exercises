@@ -34,4 +34,6 @@ var_dump($names_array);
 array_multisort($last, SORT_ASC, $names_array);
 var_dump($names_array);
 
+exit(0);
+
 ?>
