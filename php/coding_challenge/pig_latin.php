@@ -47,7 +47,7 @@ function to_english($piglatin)
 			{
 				$new_cap = (substr($word, -3, 1));
 			}
-
+			// remove last three characters
 			$eng_word = substr($word, 1, -3);
 			$english_words[] = $new_cap . $first . $eng_word;
 		}	
