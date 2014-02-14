@@ -37,4 +37,6 @@ $pig_latin = pig_latin($english);
 
 echo PHP_EOL . implode(' ', $pig_latin) . PHP_EOL;
 
+exit(0);
+
 ?>
