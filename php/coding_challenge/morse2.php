@@ -37,12 +37,7 @@ $working_string = '';
 
 for($i = 0; $i < $strlen; $i++)
 {
-	// if ($decode_this_file{$i} == "\n")
-	// {
-	// 	$working_string .= "\n";
-	// 	$working_string = '';
-
-	// }
+	
 	if($decode_this_file{$i} == ' ' || $decode_this_file{$i} == "\n")
 	{
 
@@ -210,11 +205,6 @@ for($i = 0; $i < $strlen; $i++)
 			case '/':
 				$decoded .= ' ';
 				break;
-
-			// Newline character (NOT WORKING?!)	
-			// case "\n":
-			// 	$decoded .= "\n";
-			// 	break;
 
 				
 		}

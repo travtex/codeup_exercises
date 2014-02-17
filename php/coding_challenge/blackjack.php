@@ -19,15 +19,21 @@ function buildDeck($suits, $cards) {
 	{
 		foreach($suits as $suit)
 		{
-			$deck[] = $card . $suit;
+			$deck[] = $card . ' ' . $suit;
 		}
 	}
 	return $deck;
 }
 
 $deck = buildDeck($suits, $cards);
+$real_deck = [];
 
-var_dump($deck);
+foreach($deck as $card)
+{
+	$real_deck[] = explode(' ', $card);
+}
+
+var_dump($real_deck);
 
 // determine if a card is an ace
 // return true for ace, false for anything else
