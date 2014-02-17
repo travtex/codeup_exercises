@@ -39,7 +39,9 @@ function import_data($filename)
     $contents = fread($handle, filesize($filename));
     $content_array = explode("\n", $contents);
     fclose($handle);
+    // $contents = file_get_contents($filename);
     return $content_array;
+
     }
 }
 

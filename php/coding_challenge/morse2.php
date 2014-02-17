@@ -19,10 +19,8 @@ function import_data($filename)
     }
     else
     {
-    $handle = fopen($filename, "r");
-    $contents = fread($handle, filesize($filename));
-    fclose($handle);
-    return $contents;
+    	$contents = file_get_contents($filename);
+    	return $contents;
     }
 }
 
@@ -34,14 +32,18 @@ $decode_this_file .= ' ';
 // var_dump($decode_this_file);
 
 $decoded = '';
-
 $strlen = strlen($decode_this_file);
-
 $working_string = '';
 
 for($i = 0; $i < $strlen; $i++)
 {
-	if($decode_this_file{$i} == ' ')
+	// if ($decode_this_file{$i} == "\n")
+	// {
+	// 	$working_string .= "\n";
+	// 	$working_string = '';
+
+	// }
+	if($decode_this_file{$i} == ' ' || $decode_this_file{$i} == "\n")
 	{
 		
 		switch ($working_string)
@@ -210,9 +212,9 @@ for($i = 0; $i < $strlen; $i++)
 				break;
 
 			// Newline character (NOT WORKING?!)	
-			case "\n":
-				$decoded .= "\n";
-				break;
+			// case "\n":
+			// 	$decoded .= "\n";
+			// 	break;
 
 				
 		}
@@ -225,7 +227,6 @@ for($i = 0; $i < $strlen; $i++)
 }
 
 fwrite(STDOUT, PHP_EOL . "Your translated morse file reads: " . PHP_EOL . $decoded . PHP_EOL);
-
 exit(0);
 
 //var_dump($decoded);
