@@ -8,12 +8,26 @@ $suits = ['C', 'H', 'S', 'D'];
 // create an array for cards
 $cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
+$deck = [];
 // build a deck (array) of cards
 // card values should be "VALUE SUIT". ex: "7 H"
 // make sure to shuffle the deck before returning it
 function buildDeck($suits, $cards) {
   // todo
+	$deck = [];
+	foreach($cards as $card)
+	{
+		foreach($suits as $suit)
+		{
+			$deck[] = $card . $suit;
+		}
+	}
+	return $deck;
 }
+
+$deck = buildDeck($suits, $cards);
+
+var_dump($deck);
 
 // determine if a card is an ace
 // return true for ace, false for anything else
@@ -70,9 +84,9 @@ $player = [];
 // todo
 
 // allow player to "(H)it or (S)tay?" till they bust (exceed 21) or stay
-while (todo) {
+//while (todo) {
   // todo
-}
+//}
 
 // show the dealer's hand (all cards)
 // todo
@@ -90,3 +104,5 @@ while (todo) {
 // by this point, if dealer has busted, then player automatically wins
 // if player and dealer tie, it is a "push"
 // if dealer has more than player, dealer wins, otherwise, player wins
+
+?>
