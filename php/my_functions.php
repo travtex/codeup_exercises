@@ -9,7 +9,6 @@ function explode_names($array)
 
 	foreach($array as $name)
 	{
-		$keys = ['first_name', 'last_name'];
 		$new_array[] = explode(' ', $name);
 
 	}
