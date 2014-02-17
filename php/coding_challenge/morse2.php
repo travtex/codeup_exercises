@@ -45,7 +45,7 @@ for($i = 0; $i < $strlen; $i++)
 	// }
 	if($decode_this_file{$i} == ' ' || $decode_this_file{$i} == "\n")
 	{
-		
+
 		switch ($working_string)
 		{
 			case '-':
@@ -219,6 +219,11 @@ for($i = 0; $i < $strlen; $i++)
 				
 		}
 		$working_string = '';
+			if ($decode_this_file{$i} == "\n")
+			{
+				$decoded .= "\n";	
+			}
+
 	}
 	else
 	{
