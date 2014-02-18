@@ -124,12 +124,16 @@ shuffle($real_deck);
 
 // var_dump(getCardValue($real_deck[10]));
 
-fwrite(STDIN, "What is your name?: ");
+fwrite(STDIN, PHP_EOL . "What is your name?: ");
 $player_name = get_input();
 
 // initialize a dealer and player hand
 $dealer = [];
 $player = [];
+
+// drawCard($player, $real_deck);
+// drawCard($player, $real_deck);
+// var_dump($player);
 
 // dealer and player each draw two cards
 // todo
