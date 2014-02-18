@@ -68,19 +68,15 @@ function getCardValue($card)
 // get total value for a hand of cards
 // don't forget to factor in aces
 // aces can be 1 or 11 (make them 1 if total value is over 21)
-function getHandTotal($hand) 
+function getHandTotal($hand, $total = 0) 
 {
   // todo
-	$total = 0;
 	foreach($hand as $card)
 	{
-		if($total >= 21 && cardIsAce($card))
-		{
-			$total += 1;
-		}
-		else
-		{
 		$total += getCardValue($card);
+		if($total > 21 && cardIsAce($card))
+		{
+			$total -= 10;
 		}
 	}
 	return $total;
@@ -105,6 +101,8 @@ function drawCard(&$hand, &$deck)
 function echoHand($hand, $name, $hidden = false) 
 {
   // todo
+	
+	
 }
 
 // build the deck of cards
@@ -126,6 +124,8 @@ shuffle($real_deck);
 
 // var_dump(getCardValue($real_deck[10]));
 
+fwrite(STDIN, "What is your name?: ");
+$player_name = get_input();
 
 // initialize a dealer and player hand
 $dealer = [];
