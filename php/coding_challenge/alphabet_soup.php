@@ -19,13 +19,14 @@ function alphabetize($str)
 	{
 		$str_multi[] = str_split($word);
 	}
-
+	
 	foreach($str_multi as $word_array)
 	{
 		sort($word_array);
 		$return_string .= implode($word_array) . ' ';
 
 	}
+	
 	return $return_string;
 }
 
