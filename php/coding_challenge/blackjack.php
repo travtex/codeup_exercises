@@ -101,8 +101,16 @@ function drawCard(&$hand, &$deck)
 function echoHand($hand, $name, $hidden = false) 
 {
   // todo
+	fwrite(STDIN, PHP_EOL . "Hand for {$name}: ");
 	
-	
+	if($hidden == FALSE)
+	{
+		foreach($hand as $card)
+		{
+			fwrite(STDIN, '[' . $card[0] . ' ' . $card[1] . '] ');
+		}
+		fwrite(STDIN, 'Total: ' . getHandTotal($hand));
+	}
 }
 
 // build the deck of cards
@@ -131,9 +139,11 @@ $player_name = get_input();
 $dealer = [];
 $player = [];
 
-// drawCard($player, $real_deck);
-// drawCard($player, $real_deck);
+drawCard($player, $real_deck);
+drawCard($player, $real_deck);
 // var_dump($player);
+
+echoHand($player, $player_name);
 
 // dealer and player each draw two cards
 // todo
