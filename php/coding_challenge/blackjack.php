@@ -25,20 +25,14 @@ function buildDeck($suits, $cards) {
 	return $deck;
 }
 
-$deck = buildDeck($suits, $cards);
-$real_deck = [];
 
-foreach($deck as $card)
-{
-	$real_deck[] = explode(' ', $card);
-}
-
-var_dump($real_deck);
 
 // determine if a card is an ace
 // return true for ace, false for anything else
 function cardIsAce($card) {
   // todo
+	return $card[0] == 'A' ? TRUE : FALSE;
+
 }
 
 // determine the value of an individual card (string)
@@ -47,6 +41,18 @@ function cardIsAce($card) {
 // numeric cards are worth their value
 function getCardValue($card) {
   // todo
+	if(isnumeric($card[0]))
+	{
+		return intval($card[0]);
+	}
+	elseif($card[0] == 'A')
+	{
+		return 11;
+	}
+	else
+	{
+		return 10;
+	}
 }
 
 // get total value for a hand of cards
@@ -74,7 +80,20 @@ function echoHand($hand, $name, $hidden = false) {
 }
 
 // build the deck of cards
+// $deck = buildDeck($suits, $cards);
+
 $deck = buildDeck($suits, $cards);
+$real_deck = [];
+
+foreach($deck as $card)
+{
+	$real_deck[] = explode(' ', $card);
+}
+
+// shuffle($real_deck);
+var_dump($real_deck);
+var_dump(cardIsAce($real_deck[12]));
+var_dump(cardIsAce($real_deck[0]));
 
 // initialize a dealer and player hand
 $dealer = [];
