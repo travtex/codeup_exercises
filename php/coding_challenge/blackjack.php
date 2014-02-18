@@ -12,7 +12,8 @@ $deck = [];
 // build a deck (array) of cards
 // card values should be "VALUE SUIT". ex: "7 H"
 // make sure to shuffle the deck before returning it
-function buildDeck($suits, $cards) {
+function buildDeck($suits, $cards) 
+{
   // todo
 	$deck = [];
 	foreach($cards as $card)
@@ -25,11 +26,19 @@ function buildDeck($suits, $cards) {
 	return $deck;
 }
 
+function get_input($upper = FALSE)
+{
+    
+    $user_input = trim(fgets(STDIN));
+    return $upper ? strtoupper($user_input) : $user_input;
+
+}
 
 
 // determine if a card is an ace
 // return true for ace, false for anything else
-function cardIsAce($card) {
+function cardIsAce($card) 
+{
   // todo
 	return $card[0] == 'A' ? TRUE : FALSE;
 
@@ -39,9 +48,10 @@ function cardIsAce($card) {
 // aces are worth 11
 // face cards are worth 10
 // numeric cards are worth their value
-function getCardValue($card) {
+function getCardValue($card) 
+{
   // todo
-	if(isnumeric($card[0]))
+	if(is_numeric($card[0]))
 	{
 		return intval($card[0]);
 	}
@@ -58,14 +68,31 @@ function getCardValue($card) {
 // get total value for a hand of cards
 // don't forget to factor in aces
 // aces can be 1 or 11 (make them 1 if total value is over 21)
-function getHandTotal($hand) {
+function getHandTotal($hand) 
+{
   // todo
+	$total = 0;
+	foreach($hand as $card)
+	{
+		if($total >= 21 && cardIsAce($card))
+		{
+			$total += 1;
+		}
+		else
+		{
+		$total += getCardValue($card);
+		}
+	}
+	return $total;
 }
 
 // draw a card from the deck into a hand
 // pass by reference (both hand and deck passed in are modified)
-function drawCard(&$hand, &$deck) {
+function drawCard(&$hand, &$deck) 
+{
   // todo
+	$hand[] = array_pop($deck);
+
 }
 
 // print out a hand of cards
@@ -75,7 +102,8 @@ function drawCard(&$hand, &$deck) {
 // Dealer: [4 C] [???] Total: ???
 // or:
 // Player: [J D] [2 D] Total: 12
-function echoHand($hand, $name, $hidden = false) {
+function echoHand($hand, $name, $hidden = false) 
+{
   // todo
 }
 
@@ -90,10 +118,14 @@ foreach($deck as $card)
 	$real_deck[] = explode(' ', $card);
 }
 
-// shuffle($real_deck);
-var_dump($real_deck);
-var_dump(cardIsAce($real_deck[12]));
-var_dump(cardIsAce($real_deck[0]));
+shuffle($real_deck);
+
+// var_dump($real_deck);
+// var_dump(cardIsAce($real_deck[12]));
+// var_dump(cardIsAce($real_deck[0]));
+
+// var_dump(getCardValue($real_deck[10]));
+
 
 // initialize a dealer and player hand
 $dealer = [];
