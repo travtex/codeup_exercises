@@ -139,11 +139,11 @@ $player_name = get_input();
 $dealer = [];
 $player = [];
 
-drawCard($player, $real_deck);
-drawCard($player, $real_deck);
+// drawCard($player, $real_deck);
+// drawCard($player, $real_deck);
 // var_dump($player);
 
-echoHand($player, $player_name);
+// echoHand($player, $player_name);
 
 // dealer and player each draw two cards
 // todo
