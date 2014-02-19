@@ -4,10 +4,8 @@
 
 // create an array for suits
 $suits = ['C', 'H', 'S', 'D'];
-
 // create an array for cards
 $cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-
 $deck = [];
 // build a deck (array) of cards
 // card values should be "VALUE SUIT". ex: "7 H"
@@ -111,6 +109,10 @@ function echoHand($hand, $name, $hidden = false)
 		}
 		fwrite(STDIN, 'Total: ' . getHandTotal($hand));
 	}
+	else
+	{
+		fwrite(STDIN, '[' . $hand[0][0] . ' ' . $hand[0][1] . '] [???] Total: ???');
+	}
 }
 
 // build the deck of cards
@@ -134,34 +136,65 @@ shuffle($real_deck);
 
 fwrite(STDIN, PHP_EOL . "What is your name?: ");
 $player_name = get_input();
-
+$dealer_name = "Dealer";
 // initialize a dealer and player hand
 $dealer = [];
 $player = [];
+$player_total = 0;
+$dealer_total = 0;
 
-// drawCard($player, $real_deck);
-// drawCard($player, $real_deck);
+fwrite(STDIN, PHP_EOL . 'Dealing...' . PHP_EOL . '...' . PHP_EOL);
+
+drawCard($player, $real_deck);
+drawCard($player, $real_deck);
 // var_dump($player);
 
 // echoHand($player, $player_name);
 
 // dealer and player each draw two cards
 // todo
-
+drawCard($dealer, $real_deck);
+drawCard($dealer, $real_deck);
 // echo the dealer hand, only showing the first card
 // todo
-
+fwrite(STDIN, PHP_EOL . echoHand($dealer, $dealer_name, $hidden = TRUE));
+fwrite(STDIN, echoHand($player, $player_name) . PHP_EOL);
 // echo the player hand
 // todo
-
+$player_total = getHandTotal($player);
 // allow player to "(H)it or (S)tay?" till they bust (exceed 21) or stay
-//while (todo) {
-  // todo
-//}
+while ($player_total <= 21) {
+  
+	fwrite(STDIN, PHP_EOL . "Do you want to (H)it or (S)tay?: ");
+	$hit_or_stay = get_input(TRUE);
+
+	if($hit_or_stay == 'H')
+	{
+		drawCard($player, $real_deck);
+		fwrite(STDIN, echoHand($player, $player_name) . PHP_EOL);
+		$player_total = getHandTotal($player);
+			if($player_total > 21)
+			{
+				fwrite(STDIN, "You busted!" . PHP_EOL);
+				exit(0);
+			}
+	}
+	elseif($hit_or_stay == 'S')
+	{
+		fwrite(STDIN, PHP_EOL . "You stayed at {$player_total}." . PHP_EOL);
+		break;
+	}
+	else
+	{
+		fwrite(STDIN, PHP_EOL . "Invalid Option." . PHP_EOL);
+		continue;
+	}
+
+}
 
 // show the dealer's hand (all cards)
 // todo
-
+fwrite(STDIN, PHP_EOL . echoHand($dealer, $dealer_name));
 // todo (all comments below)
 
 // at this point, if the player has more than 21, tell them they busted
@@ -170,10 +203,40 @@ $player = [];
 // if neither of the above are true, then the dealer needs to draw more cards
 // dealer draws until their hand has a value of at least 17
 // show the dealer hand each time they draw a card
+$dealer_total = getHandTotal($dealer);
+while($dealer_total < 17)
+{
+	drawCard($dealer, $real_deck);
+	fwrite(STDIN, PHP_EOL . "Dealer hits ..." . PHP_EOL);
+	fwrite(STDIN, echoHand($dealer, $dealer_name) . PHP_EOL);
+	$dealer_total = getHandTotal($dealer);
 
-// finally, we can check and see who won
-// by this point, if dealer has busted, then player automatically wins
-// if player and dealer tie, it is a "push"
-// if dealer has more than player, dealer wins, otherwise, player wins
+		if($dealer_total > 21)
+		{
+			fwrite(STDIN, PHP_EOL . "Dealer busts!  You win!" . PHP_EOL);
+			exit(0);
+		}
+		else
+		{
+			continue;
+		}
+
+}
+
+if($dealer_total > $player_total)
+{
+	fwrite(STDIN, PHP_EOL . "Dealer wins!" . PHP_EOL);
+	exit(0);
+}
+elseif($dealer_total == $player_total)
+{
+	fwrite(STDIN, PHP_EOL . "It's a tie.  You push." . PHP_EOL);
+	exit(0);
+}
+else
+{
+	fwrite(STDIN, PHP_EOL . "You win!" . PHP_EOL);
+}
+
 
 ?>
