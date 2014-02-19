@@ -63,6 +63,22 @@ function getCardValue($card)
 	}
 }
 
+function aceInHand($hand)
+{
+	foreach($hand as $card)
+	{
+		if ($card[0] == 'A')
+		{
+			return TRUE;
+			break;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+}
+
 // get total value for a hand of cards
 // don't forget to factor in aces
 // aces can be 1 or 11 (make them 1 if total value is over 21)
@@ -72,7 +88,7 @@ function getHandTotal($hand, $total = 0)
 	foreach($hand as $card)
 	{
 		$total += getCardValue($card);
-		if($total > 21 && cardIsAce($card))
+		if($total > 21 && aceInHand($hand))
 		{
 			$total -= 10;
 		}
@@ -143,10 +159,17 @@ $player = [];
 $player_total = 0;
 $dealer_total = 0;
 
+
+// Testing Ace bug
+// $player[] = ['A','C'];
+// $player[] = ['8','C'];
+// $player[] = ['10','C'];
+
 fwrite(STDIN, PHP_EOL . 'Dealing...' . PHP_EOL . '...' . PHP_EOL);
 
 drawCard($player, $real_deck);
 drawCard($player, $real_deck);
+
 // var_dump($player);
 
 // echoHand($player, $player_name);
