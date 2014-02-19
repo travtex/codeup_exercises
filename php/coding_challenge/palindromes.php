@@ -2,7 +2,7 @@
 
 function is_pal($string)
 {
-	$string = $string = preg_replace(array('~[:;!?]|[.,](?![0-9])|\'s~', '/\s+/'), array('', ' '), $string);
+	$string = preg_replace(array('~[:;!?]|[.,](?![0-9])|\'s~', '/\s+/'), array('', ' '), $string);
 	$string_array = str_split($string);
 	array_reverse($string_array);
 	$rev_string = implode($string_array);
