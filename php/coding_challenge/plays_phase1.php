@@ -35,13 +35,14 @@ function get_lines_pygmalion($character) {
 	$my_lines = [];
 	$filename = "../data/pygmalion.txt";
 	$character1 = strtoupper($character) . '\. ';
-	$character2 = strtoupper($character) . '\ \[';
+	$character2 = strtoupper($character) . ' \[';
 
 	$lines = file_get_contents($filename);
 
-	if(preg_match_all('~' . $character1 . '(.*?)' . "\n\n" . '~s', $lines, $my_lines)) {
+	if(preg_match_all('~' . $character1 . '(.*?)' . "\n\n" . '~s', $lines, $my_lines)
+		|| preg_match_all('~' . $character2 . '(.*?)' . "\n\n" . '~s', $lines, $my_lines)) {
 		return $my_lines[0];
-	} 
+	}
 }
 
 // ask user for the character name
